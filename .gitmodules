@@ -1,0 +1,3 @@
+[submodule "ECIF"]
+	path = ECIF
+	url = git@github.com:Limsande/ECIF.git
