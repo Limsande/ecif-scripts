@@ -63,7 +63,8 @@ def load_data(ecif: str, ld: str, pK: str) -> (DataFrame, DataFrame):
     descriptors = ecif.merge(ligand_descriptors, left_on="PDB", right_on="PDB")
     descriptors_pK = descriptors.merge(pK, left_on='PDB', right_on='PDB')
 
-    return descriptors_pK.iloc[:, :-1], descriptors_pK.pK
+    # Descriptors span all columns, except first (PDB ID) and last (pK).
+    return descriptors_pK.iloc[:, 1:-1], descriptors_pK.pK
 
 
 def get_model(model: str) -> Union[GradientBoostingRegressor, RandomForestRegressor]:
