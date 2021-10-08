@@ -11,13 +11,14 @@ given PDB ID. Merging those with all the different possible ECIF beforehand, wou
 import os
 import pickle
 import sys
+import warnings
 from argparse import ArgumentParser, Namespace
 from datetime import datetime
 from typing import Union
 
 import pandas as pd
 from pandas import DataFrame
-from scipy.stats import pearsonr
+from scipy.stats import pearsonr, PearsonRConstantInputWarning
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 from sklearn.metrics import make_scorer, mean_squared_error
 from sklearn.model_selection import cross_validate
@@ -88,8 +89,18 @@ def get_model(model: str) -> Union[GradientBoostingRegressor, RandomForestRegres
 
 
 def pearsonr_score(y_train, y_test) -> float:
-    """Wrapper to be used with cross_validate."""
-    return pearsonr(y_train, y_test)[0]
+    """
+    Wrapper to be used with cross_validate. If any of y_train, y_test has 0 variance,
+    i.e. is "constant", pearson_r is undefined, and pearsonr() issues a warning. Can't
+    think of a better solution than setting pearson_r=0 in this case.
+    """
+    warnings.filterwarnings('error')
+    try:
+        res =  pearsonr(y_train, y_test)[0]
+    except PearsonRConstantInputWarning:
+        res = 0
+
+    return res
 
 
 def train(model, descriptors, pK) -> dict:
