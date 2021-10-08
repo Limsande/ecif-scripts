@@ -137,5 +137,6 @@ if __name__ == '__main__':
     print('  Scores can be accessed as model.scores_dict')
 
     print(f'Saving model to {args.output}.')
-    pickle.dump(model, open(args.output, 'wb'))
+    with open(args.output, 'wb') as f:
+        pickle.dump(model, f)
     print('Finished. Bye.')
