@@ -135,19 +135,23 @@ if __name__ == '__main__':
     # Load the training data
     descriptors, pK = load_data(ecif=args.ecif, ld=args.ld, pK=args.pK)
 
+    # Train model
     model = get_model(args.model)
     print(f'Training model...')
     scores = train(model, descriptors, pK)
-    model.scores_dict = scores
     pearson = scores['test_pearsonr'].mean()
     mse = scores['test_mse'].mean() * (-1)  # sign flipped in cross-val because maximization
     print(f'Done. Took {scores["elapsed_time"]}.')
     print('Scores (mean across all CV splits):')
     print(f'  Pearson correlation coefficient: {pearson}')
     print(f'  RMSE: {mse}')
-    print('  Scores can be accessed as model.scores_dict')
 
+    # Persist model
+    model.scores_dict = scores
+    model.input_dict = {'ecif': os.path.abspath(args.ecif), 'ld': os.path.abspath(args.ld), 'pK': os.path.abspath(args.pK)}
     print(f'Saving model to {args.output}.')
     with open(args.output, 'wb') as f:
         pickle.dump(model, f)
+    print('Input files can be accessed as model.input_dict')
+    print('Scores can be accessed as model.scores_dict')
     print('Finished. Bye.')
