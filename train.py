@@ -2,7 +2,8 @@
 Trains a model of given TYPE, using ECIF, ligand descriptors, and pK from given input FILEs and writes the trained model
 to given output FILE.
 
-Instead of relying on predefined training and validation sets, the training is performed with 10-fold cross validation
+In evaluation mode (--evaluate), Pearson correlation coefficient and RMSE are computed between true and predicted pK.
+Instead of relying on predefined training and validation sets, the evaluation is performed with 10-fold cross validation
 across the entire training set.
 
 Training data is accepted in three parts, because unlike ECIF, ligand descriptors and pK are always the same for a
@@ -27,6 +28,7 @@ from sklearn.model_selection import cross_validate
 def parse_args() -> Namespace:
     """
     train.py [-h] --model {rf,gbt} --ecif FILE --ld FILE --pK FILE --output FILE
+    train.py [-h] --model {rf,gbt} --ecif FILE --ld FILE --pK FILE --evaluate
     """
     parser = ArgumentParser(description=__doc__)
     required = parser.add_argument_group('required arguments')
@@ -41,8 +43,10 @@ def parse_args() -> Namespace:
         '--pK', required=True, type=str, metavar='FILE',
         help='pK portion of training data (CSV format). PDB column is used to join with ECIF and LD. Columns except'
              'PDB and pK are ignored.')
-    required.add_argument(
-        '--output', required=True, type=str, metavar='FILE', help='Path to save trained model to')
+    exclusive = parser.add_mutually_exclusive_group()
+    exclusive.add_argument(
+        '--output', type=str, metavar='FILE', help='Path to save trained model to')
+    exclusive.add_argument('--evaluate', action='store_true', help='Only run evaluation')
     return parser.parse_args()
 
 
@@ -103,7 +107,7 @@ def pearsonr_score(y_train, y_test) -> float:
     return res
 
 
-def train(model, descriptors, pK) -> dict:
+def cv_score(model, descriptors, pK) -> (float, float, float):
     scoring_funcs = {
         'mse': make_scorer(mean_squared_error, greater_is_better=False),
         'pearsonr': make_scorer(pearsonr_score)
@@ -111,8 +115,16 @@ def train(model, descriptors, pK) -> dict:
     start_time = datetime.now()
     scores = cross_validate(model, descriptors, pK, scoring=scoring_funcs, cv=10)
     elapsed_time = str(datetime.now() - start_time).split('.')[0]  # Remove microseconds
-    scores['elapsed_time'] = elapsed_time
-    return scores
+
+    scores['test_mse'] = scores['test_mse'].mean() * (-1)  # sign flipped in cross-val because maximization
+    return scores['test_pearsonr'].mean(), scores['test_mse'], elapsed_time
+
+
+def train(model, descriptors, pK) -> (Union[GradientBoostingRegressor, RandomForestRegressor], float):
+    start_time = datetime.now()
+    model = model.fit(descriptors, pK)
+    elapsed_time = str(datetime.now() - start_time).split('.')[0]  # Remove microseconds
+    return model, elapsed_time
 
 
 if __name__ == '__main__':
@@ -122,11 +134,11 @@ if __name__ == '__main__':
     for f in [args.ecif, args.ld, args.pK]:
         if not os.path.isfile(f):
             print_error_and_exit(f'File does not exist or is a directory: {f}')
-    if os.path.exists(args.output):
+    if args.output and os.path.exists(args.output):
         print_error_and_exit(f'Output file already exists: {args.output}')
 
     # If output path contains directories, create them.
-    if os.path.dirname(args.output) != '':
+    if args.output and os.path.dirname(args.output) != '':
         try:
             os.makedirs(os.path.dirname(args.output), exist_ok=True)
         except IOError as e:
@@ -137,21 +149,23 @@ if __name__ == '__main__':
 
     # Train model
     model = get_model(args.model)
-    print(f'Training model...')
-    scores = train(model, descriptors, pK)
-    pearson = scores['test_pearsonr'].mean()
-    mse = scores['test_mse'].mean() * (-1)  # sign flipped in cross-val because maximization
-    print(f'Done. Took {scores["elapsed_time"]}.')
-    print('Scores (mean across all CV splits):')
-    print(f'  Pearson correlation coefficient: {pearson}')
-    print(f'  RMSE: {mse}')
 
-    # Persist model
-    model.scores_dict = scores
-    model.input_dict = {'ecif': os.path.abspath(args.ecif), 'ld': os.path.abspath(args.ld), 'pK': os.path.abspath(args.pK)}
-    print(f'Saving model to {args.output}.')
-    with open(args.output, 'wb') as f:
-        pickle.dump(model, f)
-    print('Input files can be accessed as model.input_dict')
-    print('Scores can be accessed as model.scores_dict')
+    if args.evaluate:
+        print(f'Training model for evaluation with 10-fold CV...')
+        pearson, mse, elapsed_time = cv_score(model, descriptors, pK)
+        print(f'Done. Took {elapsed_time}.')
+        print('Scores (mean across all CV splits):')
+        print(f'  Pearson correlation coefficient: {pearson}')
+        print(f'  RMSE: {mse}')
+    else:
+        print(f'Training model...')
+        model, elapsed_time = train(model, descriptors, pK)
+        print(f'Done. Took {elapsed_time}.')
+
+        # Persist model
+        model.input_dict = {'ecif': os.path.abspath(args.ecif), 'ld': os.path.abspath(args.ld), 'pK': os.path.abspath(args.pK)}
+        print(f'Saving model to {args.output}.')
+        with open(args.output, 'wb') as f:
+            pickle.dump(model, f)
+        print('Input files can be accessed as model.input_dict')
     print('Finished. Bye.')
