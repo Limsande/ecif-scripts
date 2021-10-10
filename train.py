@@ -88,8 +88,11 @@ def get_model(model: str) -> Union[GradientBoostingRegressor, RandomForestRegres
             subsample=0.7
         )
     elif model == 'rf':
-        # TODO
-        return RandomForestRegressor()
+        return RandomForestRegressor(
+            random_state=42,
+            n_estimators=500,
+            max_features=0.33
+        )
 
 
 def pearsonr_score(y_train, y_test) -> float:
