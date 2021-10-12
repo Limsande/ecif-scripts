@@ -23,9 +23,9 @@ def parse_args() -> Namespace:
              'Must be saved in binary format as produced by pickle.dump().')
     required.add_argument(
         '--descriptors', required=True, type=str, metavar='FILE',
-        help='ECIF::LD descriptors to predict binding affinity for (CSV format). All columns except "ID" (optional) are'
-             'assumed to be part of the descriptors. Descriptors must be of same length as those used to train the'
-             'model.')
+        help='ECIF::LD descriptors to predict binding affinity for (CSV format). All columns except "Receptor" and'
+             '"Ligand" (both optional) are assumed to be part of the descriptors. Descriptors must be of same length as'
+             'those used to train the model.')
     required.add_argument(
         '--output', required=True, type=str, metavar='FILE', help='Path to write results to')
     return parser.parse_args()
@@ -74,11 +74,13 @@ if __name__ == '__main__':
     ecif_ld = load_descriptors(args.descriptors)
 
     # Predict binding affinities
-    predictions = model.predict(ecif_ld.drop(columns=['ID'], errors='ignore'))
+    predictions = model.predict(ecif_ld.drop(columns=['Receptor', 'Ligand'], errors='ignore'))
 
     # Construct output
-    if 'ID' in ecif_ld.columns:
-        predictions = DataFrame({'ID': ecif_ld['ID'], 'Predicted_Binding_Affinity': predictions})
-    else:
-        predictions = DataFrame({'Predicted_Binding_Affinity': predictions})
+    predictions = DataFrame()
+    if 'Receptor' in ecif_ld.columns:
+        predictions = DataFrame({'Receptor': ecif_ld['Receptor']})
+    if 'Ligand' in ecif_ld.columns:
+        predictions = predictions.join(DataFrame({'Ligand': ecif_ld['Ligand']}))
+    predictions = predictions.join(DataFrame({'Predicted_Binding_Affinity': predictions}))
     predictions.to_csv(args.output, index=False)
