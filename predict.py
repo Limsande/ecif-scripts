@@ -77,10 +77,10 @@ if __name__ == '__main__':
     predictions = model.predict(ecif_ld.drop(columns=['Receptor', 'Ligand'], errors='ignore'))
 
     # Construct output
-    predictions = DataFrame()
+    output = DataFrame()
     if 'Receptor' in ecif_ld.columns:
-        predictions = DataFrame({'Receptor': ecif_ld['Receptor']})
+        output = DataFrame({'Receptor': ecif_ld['Receptor']})
     if 'Ligand' in ecif_ld.columns:
-        predictions = predictions.join(DataFrame({'Ligand': ecif_ld['Ligand']}))
-    predictions = predictions.join(DataFrame({'Predicted_Binding_Affinity': predictions}))
-    predictions.to_csv(args.output, index=False)
+        output = output.join(DataFrame({'Ligand': ecif_ld['Ligand']}))
+    output = output.join(DataFrame({'Predicted_Binding_Affinity': predictions}))
+    output.to_csv(args.output, index=False)
