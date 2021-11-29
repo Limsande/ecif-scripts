@@ -64,3 +64,8 @@ train.py [-h|--help] --model {rf,gbt} --ecif FILE --ld FILE --pK FILE --evaluate
 ```bash
 predict.py [-h|--help] --model FILE --descriptors FILE --output FILE
 ```
+
+## Analyze the rescoring
+
+We prepared a Jupyter notebook (`notebooks/rescoring.ipynb`), that can be used to analyze the rescoring.
+
