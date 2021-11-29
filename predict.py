@@ -82,5 +82,5 @@ if __name__ == '__main__':
         output = DataFrame({'Receptor': ecif_ld['Receptor']})
     if 'Ligand' in ecif_ld.columns:
         output = output.join(DataFrame({'Ligand': ecif_ld['Ligand']}))
-    output = output.join(DataFrame({'Predicted_Binding_Affinity': predictions}))
+    output = output.join(DataFrame({'PredictedBindingAffinity': predictions}))
     output.to_csv(args.output, index=False)
