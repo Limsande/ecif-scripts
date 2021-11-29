@@ -38,6 +38,8 @@ calculate_ecif.py \
     ECIF/Example_Structures/1a0q_ligandCD1.pdb
 ```
 
+The Jupyter notebook `notebooks/validate_ecif_calculation.ipynb` compares descriptors computed with our script to descriptors computed with the code by Sánchez-Cruz et al. to show the correctness of our script.
+
 ## Train a model on ECIF descriptors and binding affinity data
 
 `train.py` can train models using ECIF descriptors of protein-ligand complexes and the corresponding binding affinity. It currently
