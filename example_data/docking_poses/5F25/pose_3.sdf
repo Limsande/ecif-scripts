@@ -1,0 +1,185 @@
+5TU
+                    3D
+ Structure written by MMmdl.
+ 32 33  0  0  1  0            999 V2000
+    4.1564   -5.8379    4.6351 N   0  0  0  0  0  0
+    4.7329   -4.6894    4.2783 C   0  0  0  0  0  0
+    4.0584   -3.7414    3.8845 O   0  0  0  0  0  0
+    6.2376   -4.6051    4.3888 C   0  0  0  0  0  0
+    7.0408   -5.7535    4.3804 C   0  0  0  0  0  0
+    8.4240   -5.6476    4.4927 C   0  0  0  0  0  0
+    9.0482   -4.3973    4.6033 C   0  0  0  0  0  0
+    8.2374   -3.2530    4.5978 C   0  0  0  0  0  0
+    6.8536   -3.3534    4.4918 C   0  0  0  0  0  0
+   10.5323   -4.2915    4.7181 C   0  0  0  0  0  0
+   11.3877   -5.4265    5.0524 C   0  0  0  0  0  0
+   11.2114   -3.1434    4.4929 C   0  0  0  0  0  0
+   12.5740   -2.9691    4.5398 N   0  0  0  0  0  0
+   13.1761   -1.6530    4.2824 C   0  0  0  0  0  0
+   13.4098   -4.0253    4.8464 C   0  0  0  0  0  0
+   14.6408   -3.9310    4.9016 O   0  0  0  0  0  0
+   12.7368   -5.3093    5.1103 C   0  0  0  0  0  0
+   13.6233   -6.4951    5.4632 C   0  0  0  0  0  0
+    3.1541   -5.9202    4.5679 H   0  0  0  0  0  0
+    4.7065   -6.5940    5.0095 H   0  0  0  0  0  0
+    6.6121   -6.7399    4.2791 H   0  0  0  0  0  0
+    8.9982   -6.5601    4.4647 H   0  0  0  0  0  0
+    8.6628   -2.2668    4.6993 H   0  0  0  0  0  0
+    6.2640   -2.4466    4.4992 H   0  0  0  0  0  0
+   10.9488   -6.3868    5.2768 H   0  0  0  0  0  0
+   10.7289   -2.2285    4.1889 H   0  0  0  0  0  0
+   12.8042   -0.9274    5.0078 H   0  0  0  0  0  0
+   14.2656   -1.6398    4.3348 H   0  0  0  0  0  0
+   12.8930   -1.2998    3.2898 H   0  0  0  0  0  0
+   14.2654   -6.7421    4.6200 H   0  0  0  0  0  0
+   14.2500   -6.2796    6.3306 H   0  0  0  0  0  0
+   13.0407   -7.3872    5.6890 H   0  0  0  0  0  0
+  1  2  1  0  0  0
+  1 19  1  0  0  0
+  1 20  1  0  0  0
+  2  3  2  0  0  0
+  2  4  1  0  0  0
+  4  9  1  0  0  0
+  4  5  2  0  0  0
+  5  6  1  0  0  0
+  5 21  1  0  0  0
+  6  7  2  0  0  0
+  6 22  1  0  0  0
+  7  8  1  0  0  0
+  7 10  1  0  0  0
+  8  9  2  0  0  0
+  8 23  1  0  0  0
+  9 24  1  0  0  0
+ 10 11  1  0  0  0
+ 10 12  2  0  0  0
+ 11 17  2  0  0  0
+ 11 25  1  0  0  0
+ 12 13  1  0  0  0
+ 12 26  1  0  0  0
+ 13 14  1  0  0  0
+ 13 15  1  0  0  0
+ 14 27  1  0  0  0
+ 14 28  1  0  0  0
+ 14 29  1  0  0  0
+ 15 16  2  0  0  0
+ 15 17  1  0  0  0
+ 17 18  1  0  0  0
+ 18 30  1  0  0  0
+ 18 31  1  0  0  0
+ 18 32  1  0  0  0
+M  END
+> <s_m_source_file>
+/mnt/data/praktikum03/WORK/Luis/Masterarbeit/Daten/LEADS-FRAG/ci0c00693_si_002/5F25/5F25_ligand.mol2.smi
+
+> <i_m_source_file_index>
+1
+
+> <i_lp_mmshare_version>
+45011
+
+> <i_f3d_flags>
+0
+
+> <s_epik_input>
+W05IMl1DKD1PKWMxW2NIXVtjSF1jKFtjSF1bY0hdMSktYzJbY0hdYyhbQ0gzXSljKD1PKW4oW2NIXTIpW0NIM10=
+
+> <s_epik_cmdline>
+J2VwaWtfcHl0aG9uJywgJy1waHQnLCAnMC4wJywgJy1waCcsICc3LjAnLCAnLXRuJywgJzgnLCAnLW1hJywgJzIwMCcsICctaW1hZScsICc8aW5maWxlLm1hZT4nLCAnLW9tYWUnLCAnPG91dGZpbGUubWFlPic=
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0000
+
+> <r_epik_State_Penalty>
+ -0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+2.45853854113456e-06
+
+> <i_epik_Tot_Q>
+0
+
+> <i_epik_Tot_abs_Q>
+0
+
+> <s_lp_Force_Field>
+OPLS3e
+
+> <r_lp_Energy>
+37.933743
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+5TU-1
+
+> <s_i_glide_gridfile>
+glide-grid
+
+> <i_i_glide_lignum>
+1
+
+> <i_i_glide_rotatable_bonds>
+2
+
+> <r_i_docking_score>
+-6.93937198892173
+
+> <r_i_glide_ligand_efficiency>
+-0.385520666051207
+
+> <r_i_glide_ligand_efficiency_sa>
+-1.01034996686995
+
+> <r_i_glide_ligand_efficiency_ln>
+-1.78372978747779
+
+> <r_glide_XP_GScore>
+-6.93937198892173
+
+> <r_i_glide_gscore>
+-6.93937198892173
+
+> <r_i_glide_evdw>
+-27.8939304351807
+
+> <r_i_glide_ecoul>
+-5.73533248901367
+
+> <r_i_glide_energy>
+-33.6292629241943
+
+> <r_i_glide_einternal>
+0.447316974401474
+
+> <r_i_glide_emodel>
+-46.8130655362909
+
+> <r_glide_XP_HBond>
+-1.11746872628037
+
+> <i_i_glide_confnum>
+1
+
+> <i_i_glide_posenum>
+13
+
+> <r_i_glide_eff_state_penalty>
+-0
+
+> <i_glide_XP_PoseRank>
+3
+
+> <r_i_glide_rmsd>
+0.694955091638692
+
+$$$$

@@ -1,0 +1,173 @@
+TYE
+                    3D
+ Structure written by MMmdl.
+ 26 26  0  0  1  0            999 V2000
+   60.5456   24.5832   30.9460 O   0  0  0  0  0  0
+   60.3253   23.1941   31.1237 C   0  0  0  0  0  0
+   59.1239   22.6924   30.2885 C   0  0  1  0  0  0
+   57.8482   23.3844   30.7954 N   0  3  0  0  0  0
+   59.2356   22.9325   28.7643 C   0  0  0  0  0  0
+   60.4390   22.2320   28.1470 C   0  0  0  0  0  0
+   61.6388   22.9297   27.9765 C   0  0  0  0  0  0
+   62.7457   22.2855   27.4328 C   0  0  0  0  0  0
+   62.6513   20.9458   27.0653 C   0  0  0  0  0  0
+   63.7480   20.3153   26.5475 O   0  0  0  0  0  0
+   61.4558   20.2470   27.2202 C   0  0  0  0  0  0
+   60.3471   20.8917   27.7628 C   0  0  0  0  0  0
+   58.9405   21.6359   30.4960 H   0  0  0  0  0  0
+   57.9291   24.3799   30.6467 H   0  0  0  0  0  0
+   57.0352   23.0500   30.2994 H   0  0  0  0  0  0
+   61.3164   24.8667   31.4690 H   0  0  0  0  0  0
+   61.2355   22.6509   30.8609 H   0  0  0  0  0  0
+   60.1474   22.9852   32.1760 H   0  0  0  0  0  0
+   58.3355   22.5899   28.2487 H   0  0  0  0  0  0
+   59.3002   24.0006   28.5481 H   0  0  0  0  0  0
+   61.7170   23.9655   28.2747 H   0  0  0  0  0  0
+   63.6777   22.8177   27.3098 H   0  0  0  0  0  0
+   63.6094   19.3790   26.3783 H   0  0  0  0  0  0
+   61.3824   19.2101   26.9279 H   0  0  0  0  0  0
+   59.4228   20.3454   27.8876 H   0  0  0  0  0  0
+   57.7092   23.2366   31.7874 H   0  0  0  0  0  0
+  1  2  1  0  0  0
+  1 16  1  0  0  0
+  2  3  1  0  0  0
+  2 17  1  0  0  0
+  2 18  1  0  0  0
+  3 13  1  0  0  0
+  3  4  1  0  0  0
+  3  5  1  0  0  0
+  4 14  1  0  0  0
+  4 15  1  0  0  0
+  4 26  1  0  0  0
+  5  6  1  0  0  0
+  5 19  1  0  0  0
+  5 20  1  0  0  0
+  6 12  1  0  0  0
+  6  7  2  0  0  0
+  7  8  1  0  0  0
+  7 21  1  0  0  0
+  8  9  2  0  0  0
+  8 22  1  0  0  0
+  9 10  1  0  0  0
+  9 11  1  0  0  0
+ 10 23  1  0  0  0
+ 11 12  2  0  0  0
+ 11 24  1  0  0  0
+ 12 25  1  0  0  0
+M  CHG  1   4   1
+M  END
+> <s_m_source_file>
+/mnt/data/praktikum03/WORK/Luis/Masterarbeit/Daten/LEADS-FRAG/ci0c00693_si_002/1Q11/1Q11_ligand.mol2.smi
+
+> <i_m_source_file_index>
+1
+
+> <i_lp_mmshare_version>
+45011
+
+> <i_f3d_flags>
+0
+
+> <s_epik_input>
+W09IXVtDSDJdW0NAQEhdKFtOSDJdKVtDSDJdYzFbY0hdW2NIXWMoW09IXSlbY0hdW2NIXTE=
+
+> <s_epik_cmdline>
+J2VwaWtfcHl0aG9uJywgJy1waHQnLCAnMC4wJywgJy1waCcsICc3LjAnLCAnLXRuJywgJzgnLCAnLW1hJywgJzIwMCcsICctaW1hZScsICc8aW5maWxlLm1hZT4nLCAnLW9tYWUnLCAnPG91dGZpbGUubWFlPic=
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0190
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0170
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0020
+
+> <r_epik_State_Penalty>
+ -0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+0.0170233545407553
+
+> <i_epik_Tot_Q>
+1
+
+> <i_epik_Tot_abs_Q>
+1
+
+> <s_lp_Force_Field>
+OPLS3e
+
+> <r_lp_Energy>
+9.922023
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+TYE-1
+
+> <s_i_glide_gridfile>
+glide-grid
+
+> <i_i_glide_lignum>
+1
+
+> <i_i_glide_rotatable_bonds>
+5
+
+> <r_i_docking_score>
+-4.37873688790526
+
+> <r_i_glide_ligand_efficiency>
+-0.364894740658771
+
+> <r_i_glide_ligand_efficiency_sa>
+-0.835400412637836
+
+> <r_i_glide_ligand_efficiency_ln>
+-1.25648613519436
+
+> <r_glide_XP_GScore>
+-4.37873688790526
+
+> <r_i_glide_gscore>
+-4.37873688790526
+
+> <r_i_glide_evdw>
+-16.7701988220215
+
+> <r_i_glide_ecoul>
+-6.79292249679565
+
+> <r_i_glide_energy>
+-23.5631213188171
+
+> <r_i_glide_einternal>
+0.675807237625122
+
+> <r_i_glide_emodel>
+-28.7951920644451
+
+> <r_glide_XP_HBond>
+-1.24421798419768
+
+> <i_i_glide_confnum>
+1
+
+> <i_i_glide_posenum>
+8
+
+> <r_i_glide_eff_state_penalty>
+-0
+
+> <i_glide_XP_PoseRank>
+2
+
+> <r_i_glide_rmsd>
+11.0785280363544
+
+$$$$

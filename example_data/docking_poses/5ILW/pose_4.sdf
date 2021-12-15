@@ -1,0 +1,182 @@
+URI
+                    3D
+ Structure written by MMmdl.
+ 29 30  0  0  1  0            999 V2000
+  -21.2511  -15.8532   -4.8069 O   0  0  0  0  0  0
+  -20.7219  -16.2567   -6.0571 C   0  0  0  0  0  0
+  -19.1808  -16.3224   -6.0302 C   0  0  2  0  0  0
+  -18.4429  -15.0024   -5.7914 C   0  0  1  0  0  0
+  -18.3433  -14.6545   -4.4223 O   0  0  0  0  0  0
+  -17.0674  -15.1987   -6.4588 C   0  0  1  0  0  0
+  -16.0081  -15.5086   -5.5625 O   0  0  0  0  0  0
+  -17.3251  -16.4166   -7.3602 C   0  0  1  0  0  0
+  -18.7074  -16.6262   -7.3345 O   0  0  0  0  0  0
+  -16.8437  -16.2981   -8.7301 N   0  0  0  0  0  0
+  -15.7249  -17.0094   -9.1260 C   0  0  0  0  0  0
+  -15.0582  -17.7657   -8.4204 O   0  0  0  0  0  0
+  -15.3695  -16.8029  -10.4343 N   0  0  0  0  0  0
+  -17.4900  -15.4595   -9.6080 C   0  0  0  0  0  0
+  -17.1158  -15.3042  -10.8928 C   0  0  0  0  0  0
+  -15.9496  -16.0134  -11.3834 C   0  0  0  0  0  0
+  -15.5225  -15.9193  -12.5301 O   0  0  0  0  0  0
+  -18.8483  -17.0981   -5.3352 H   0  0  0  0  0  0
+  -18.9798  -14.2144   -6.3222 H   0  0  0  0  0  0
+  -16.8111  -14.3302   -7.0705 H   0  0  0  0  0  0
+  -16.8892  -17.3268   -6.9341 H   0  0  0  0  0  0
+  -14.5485  -17.3033  -10.7378 H   0  0  0  0  0  0
+  -21.1002  -14.9001   -4.7039 H   0  0  0  0  0  0
+  -21.1169  -17.2464   -6.2908 H   0  0  0  0  0  0
+  -21.0716  -15.5679   -6.8304 H   0  0  0  0  0  0
+  -17.5535  -15.0837   -4.0776 H   0  0  0  0  0  0
+  -15.2430  -15.8041   -6.0613 H   0  0  0  0  0  0
+  -18.3233  -14.9328   -9.1667 H   0  0  0  0  0  0
+  -17.6543  -14.6519  -11.5613 H   0  0  0  0  0  0
+  1  2  1  0  0  0
+  1 23  1  0  0  0
+  2  3  1  0  0  0
+  2 24  1  0  0  0
+  2 25  1  0  0  0
+  3 18  1  0  0  0
+  3  9  1  0  0  0
+  3  4  1  0  0  0
+  4 19  1  0  0  0
+  4  5  1  0  0  0
+  4  6  1  0  0  0
+  5 26  1  0  0  0
+  6 20  1  0  0  0
+  6  7  1  0  0  0
+  6  8  1  0  0  0
+  7 27  1  0  0  0
+  8 21  1  0  0  0
+  8  9  1  0  0  0
+  8 10  1  0  0  0
+ 10 11  1  0  0  0
+ 10 14  1  0  0  0
+ 11 12  2  0  0  0
+ 11 13  1  0  0  0
+ 13 22  1  0  0  0
+ 13 16  1  0  0  0
+ 14 15  2  0  0  0
+ 14 28  1  0  0  0
+ 15 16  1  0  0  0
+ 15 29  1  0  0  0
+ 16 17  2  0  0  0
+M  END
+> <s_m_source_file>
+/mnt/data/praktikum03/WORK/Luis/Masterarbeit/Daten/LEADS-FRAG/ci0c00693_si_002/5ILW/5ILW_ligand.mol2.smi
+
+> <i_m_source_file_index>
+1
+
+> <i_lp_mmshare_version>
+45011
+
+> <i_f3d_flags>
+0
+
+> <s_epik_input>
+W09IXVtDSDJdW0NAQEhdMVtDQEBIXShbT0hdKVtDQEBIXShbT0hdKVtDQEBIXShPMSluMmMoPU8pW25IXWMoPU8pW2NIXVtjSF0y
+
+> <s_epik_cmdline>
+J2VwaWtfcHl0aG9uJywgJy1waHQnLCAnMC4wJywgJy1waCcsICc3LjAnLCAnLXRuJywgJzgnLCAnLW1hJywgJzIwMCcsICctaW1hZScsICc8aW5maWxlLm1hZT4nLCAnLW9tYWUnLCAnPG91dGZpbGUubWFlPic=
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0043
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0043
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0000
+
+> <r_epik_State_Penalty>
+ -0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+0.00426155666867407
+
+> <i_epik_Tot_Q>
+0
+
+> <i_epik_Tot_abs_Q>
+0
+
+> <s_epik_Chemistry_Notes>
+This compound contains an acetal/aminal-like group ( X-CH(R)-Y where X, Y are N, S, or O) that may be acid/base labile, releasing an aldehyde.
+
+> <s_lp_Force_Field>
+OPLS3e
+
+> <r_lp_Energy>
+23.561165
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+URI-1
+
+> <s_i_glide_gridfile>
+glide-grid
+
+> <i_i_glide_lignum>
+1
+
+> <i_i_glide_rotatable_bonds>
+5
+
+> <r_i_docking_score>
+-7.62030329829455
+
+> <r_i_glide_ligand_efficiency>
+-0.448253135193797
+
+> <r_i_glide_ligand_efficiency_sa>
+-1.15258503339014
+
+> <r_i_glide_ligand_efficiency_ln>
+-1.9879674347139
+
+> <r_glide_XP_GScore>
+-7.62030329829455
+
+> <r_i_glide_gscore>
+-7.62030329829455
+
+> <r_i_glide_evdw>
+-30.7179470062256
+
+> <r_i_glide_ecoul>
+-7.11350870132446
+
+> <r_i_glide_energy>
+-37.83145570755
+
+> <r_i_glide_einternal>
+1.53509700298309
+
+> <r_i_glide_emodel>
+-47.6674731648616
+
+> <r_glide_XP_HBond>
+-3.14572439189271
+
+> <i_i_glide_confnum>
+1
+
+> <i_i_glide_posenum>
+10
+
+> <r_i_glide_eff_state_penalty>
+-0
+
+> <i_glide_XP_PoseRank>
+4
+
+> <r_i_glide_rmsd>
+3.83862830641477
+
+$$$$

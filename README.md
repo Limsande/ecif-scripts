@@ -19,23 +19,17 @@ conda env create -n ecif -f ECIF/conda_env.yaml
 The script `calculate_ecif.py` offers this command line interface:
 
 ```bash
-calculate_ecif.py [-h|--help] [--no-warn-missing-rank] --complx-name STRING --receptor FILE [--cutoff FLOAT] --output PATH FILE...
+calculate_ecif.py [-h|--help] [--cutoff FLOAT] --receptors FILE --poses FILE --output PATH
 ```
 
-It accepts a receptor and any number of FILE... as ligands. Then computes ECIF::LD descriptors for all receptor-ligand
-pairs. ECIF::LD have a parameter, a distance cutoff two atoms must not exceed to be counted as pair. The cutoff to use can be
-set via the --cutoff parameter. If --cutoff is omitted, descriptors for all cutoffs from 4.0 to 15.0 A are computed
-(in steps of 0.5 A). In this case, OUTPUT is interpreted as a directory, in which one CSV file per cutoff is created.
+It calculates ECIF::LD descriptors for receptor-ligand complexes. Accepts as input one CSV file with receptor files and one with pose files.
+Run `calculate_ecif.py -h` for more information.
 
-Example invokation:
+Example invocation:
 
 ```bash
-calculate_ecif.py \
-    --complx-name 1A0Q \
-    --receptor ECIF/Example_Structures/1a0q_protein.pdb \
-    --cutoff 6.0 \
-    --output ecif_ld.csv \
-    ECIF/Example_Structures/1a0q_ligandCD1.pdb
+cd example_data/docking_poses
+calculate_ecif.py --cutoff 6 --input poses.csv --output descriptors.csv
 ```
 
 The Jupyter notebook `notebooks/validate_ecif_calculation.ipynb` compares descriptors computed with our script to descriptors computed with the code by Sánchez-Cruz et al. to show the correctness of our script.
@@ -71,3 +65,6 @@ predict.py [-h|--help] --model FILE --descriptors FILE --output FILE
 
 We prepared a Jupyter notebook (`notebooks/rescoring.ipynb`), that can be used to analyze the rescoring.
 
+## TODO
+
+- [ ] resolve paths in input file relative to input file
